@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Login V1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+
+    <base href="/">
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/uploadPage.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+
+</head>
+<body>
+
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <div class="login100-pic js-tilt" data-tilt id="needchange">
+                <img src="images/img-01.png" alt="IMG">
+            </div>
+
+            <form method="POST" enctype="multipart/form-data" action="/upload" class="inputfile inputfile-2" >
+                <span class="login100-form-title">
+						Upload a Video
+                </span>
+
+                <div class="box">
+                    <input type="file" name="file" id="file-1" />
+                </div>
+
+                <div visibility ="hidden"  style="height: 15px"></div>
+
+                <div> Title</div>
+                <input  type = "text" class = "input50"id = "sub" name = "subtitle" placeholder= "Please Enter title for the video"/>
+
+                <div style="height: 15px"> </div>
+                <div> Abstract</div>
+                <textarea class = "input100" id = "abs" name = "abstracts" placeholder= "Please Enter abstract for the video"></textarea>
+
+                <div visibility ="hidden"  style="height: 20px">
+
+                </div>
+
+
+
+                <div>
+                    <p align="center" >
+                     <input type="submit" value="upload" class="login100-form-btn"  id="myButton"/>
+                    </p>
+                </div>
+
+
+
+
+
+                <div class="text-center p-t-136">
+                    <a class="txt2" href="/search">
+                        Go back to Search page
+                        <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+            </form>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--===============================================================================================-->
+<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/bootstrap/js/popper.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/tilt/tilt.jquery.min.js"></script>
+<script src="js/custom-file-input.js"></script>
+
+
+<script >
+    $('.js-tilt').tilt({
+        scale: 1.1
+    })
+
+</script>
+
+<script>
+    $('form').submit(function(){
+        console.log("Submited");
+        document.getElementById("myButton").disabled = true;
+        document.getElementById("myButton").value = "Please waiting...";
+        var ele = document.getElementById("needchange");
+        ele.innerHTML = "";
+        ele.innerHTML = "                <div id=\"loading-center-absolute\">\n" +
+            "                    <div class=\"object\" id=\"object_one\"></div>\n" +
+            "                    <div class=\"object\" id=\"object_two\"></div>\n" +
+            "                    <div class=\"object\" id=\"object_three\"></div>\n" +
+            "                    <div class=\"object\" id=\"object_four\"></div>\n" +
+            "                    <div class=\"object\" id=\"object_five\"></div>\n" +
+            "                    <div class=\"object\" id=\"object_six\"></div>\n" +
+            "                    <div class=\"object\" id=\"object_seven\"></div>\n" +
+            "                    <div class=\"object\" id=\"object_eight\"></div>\n" +
+            "\n" +
+            "                </div>";
+
+
+    });
+
+
+</script>
+<!--===============================================================================================-->
+<script src="js/main.js"></script>
+
+</body>
+</html>
